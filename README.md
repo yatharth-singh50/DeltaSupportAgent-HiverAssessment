@@ -216,10 +216,12 @@ The two engines share the same high-level routing/retrieval/generation structure
 - A Groq API key for cloud inference
 - For local inference: enough memory to load the small Qwen model
 
+The cloud engine is the recommended path for reproducing the reported evaluation results.
+
 ### Install
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/yatharth-singh50/DeltaSupportAgent-HiverAssessment
 cd DeltaSupportAgent
 
 python -m venv .venv
@@ -235,13 +237,13 @@ pip install -r requirements.txt
 
 ### Configure Groq
 
-Create a `.env` file:
+Create a `.env` file in the project root:
 
 ```env
 GROQ_API_KEY=your_key_here
 ```
 
-Do not commit the `.env` file.
+Do not commit the `.env` file or expose your API key publicly.
 
 ### Run
 
@@ -262,7 +264,7 @@ The repository contains the golden set and evaluation artifacts used for the rep
 The intended evaluation flow is:
 
 ```bash
-python src/evaluate_agent.py
+python src/evaluate.py
 ```
 
 The evaluation produces structured results for:
@@ -646,18 +648,30 @@ There is no live airline backend, CRM, booking system or authenticated customer 
 
 ```text
 DeltaSupportAgent/
+├── .gitignore
 ├── data/
 │   ├── delta_golden_set_labeled.csv
-│   └── ...
-├── src/
-│   ├── agent.py
-│   ├── evaluate_agent.py
-│   ├── baselines.py
-│   └── ...
+│   ├── delta_golden_set_unlabeled.csv
+│   ├── human_judge_samples.csv
+│   └── twcs.csv
 ├── evaluation_results.csv
 ├── evaluation_summary.json
+├── models/
+│   ├── nn_model.pkl
+│   ├── reference_corpus.pkl
+│   └── tfidf_vectorizer.pkl
+├── notebooks/
+├── README.md
 ├── requirements.txt
-└── README.md
+└── src/
+    ├── agent.py
+    ├── baselines.py
+    ├── build_retriever.py
+    ├── evaluate.py
+    ├── extract_delta.py
+    ├── label_tool.py
+    ├── test_agent.py
+    └── ...
 ```
 
 The exact repository contents may evolve as the project is iterated; the evaluation artifacts are retained so headline results remain inspectable.
