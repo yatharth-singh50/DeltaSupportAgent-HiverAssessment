@@ -1,0 +1,9 @@
+google-genai
+pandas
+python-dotenv
+scikit-learn
+joblib
+torch
+transformers
+accelerate
+groq

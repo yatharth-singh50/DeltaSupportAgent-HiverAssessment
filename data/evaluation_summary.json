@@ -1,0 +1,77 @@
+{
+  "dataset": {
+    "golden_set_size": 200,
+    "completed_agent_predictions": 200,
+    "completion_rate": 1.0
+  },
+  "agent": {
+    "intent_accuracy": 0.72,
+    "intent_macro_f1": 0.6912627262300511,
+    "intent_weighted_f1": 0.7276607433670201,
+    "escalation_accuracy": 0.78,
+    "escalation_precision": 0.8494623655913979,
+    "escalation_recall": 0.7247706422018348,
+    "escalation_f1": 0.7821782178217822,
+    "llm_judge_replies_scored": 107,
+    "llm_judge_mean": 4.710280373831775,
+    "llm_judge_median": 5.0
+  },
+  "baselines": {
+    "trivial": {
+      "intent_accuracy": 0.37,
+      "intent_macro_f1": 0.10802919708029197,
+      "escalation_accuracy": 0.545,
+      "escalation_precision": 0.545,
+      "escalation_recall": 1.0,
+      "escalation_f1": 0.7055016181229773
+    },
+    "simple_keyword": {
+      "intent_accuracy": 0.39,
+      "intent_macro_f1": 0.3257256079558638,
+      "escalation_accuracy": 0.55,
+      "escalation_precision": 0.7317073170731707,
+      "escalation_recall": 0.27522935779816515,
+      "escalation_f1": 0.4
+    }
+  },
+  "intent_per_class": {
+    "Flight_Status_and_Upgrades": {
+      "precision": 0.5121951219512195,
+      "recall": 0.7777777777777778,
+      "f1": 0.6176470588235294,
+      "support": 27.0
+    },
+    "Baggage_and_Amenities": {
+      "precision": 0.7,
+      "recall": 0.6666666666666666,
+      "f1": 0.6829268292682927,
+      "support": 21.0
+    },
+    "Refunds_and_Complaints": {
+      "precision": 0.6774193548387096,
+      "recall": 0.8076923076923077,
+      "f1": 0.7368421052631579,
+      "support": 52.0
+    },
+    "Praise_and_Feedback": {
+      "precision": 0.9811320754716981,
+      "recall": 0.7027027027027027,
+      "f1": 0.8188976377952756,
+      "support": 74.0
+    },
+    "Needs_Context_or_DM": {
+      "precision": 0.625,
+      "recall": 0.5769230769230769,
+      "f1": 0.6,
+      "support": 26.0
+    }
+  },
+  "evaluation_run": {
+    "new_agent_evaluations": 6,
+    "skipped_existing_agent": 194,
+    "agent_failures": 0,
+    "new_judge_scores": 2,
+    "skipped_existing_judge": 198,
+    "judge_failures": 0
+  }
+}
